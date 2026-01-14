@@ -1,13 +1,9 @@
-import './App.css'
+// 1) --- JSX (HTML + JS Together) ---- //
 
-function App() {
-  const isHot = true
+JSX is not HTML — it’s JavaScript syntax.
 
-  return (
-    <>
-    <h2>{isHot? "Hot weather" : "Not so hot weather"}</h2>
-    </>
-  )
-}
+const isHot = true
 
-export default App
+return (
+  <h2>{isHot ? "Hot Weather" : "Cool Weather"}</h2>
+)

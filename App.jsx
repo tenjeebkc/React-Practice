@@ -37,8 +37,8 @@ return (
 }
 
 
-// 3) --------------- Use State -------------- //
-State = Data the changes over time
+// 3) --------------- Use State ----------------- //
+// State = Data the changes over time
 
 import { useState } from "react"
 
@@ -72,5 +72,31 @@ function App() {
     </> 
   )
 }
+
+// 5) -------------- Use Effects - (API Magic) -------------------//
+// You use this for: Fetching data, Timers, DOM interactions
+
+import { useState, useEffect } from 'react'
+
+function App() {
+  const [post, setPost] = useState(null)
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const res = await fetch("https://jsonplaceholder.typicode.com/todos/1")
+      const data = await res.json()
+      setPost(data)
+    }
+    fetchPosts()
+  }, [])
+
+  return (
+    <>
+      {post ? <p>Post title {post.title} </p> : <p>Loading...</p> }
+      </>
+  )
+}
+
+
 
 

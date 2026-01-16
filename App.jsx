@@ -1,4 +1,4 @@
-// 1) --- JSX (HTML + JS Together) ---- //
+// 1) ------------- JSX (HTML + JS Together) ------------ //
 
 # JSX is not HTML — it’s JavaScript syntax.
 
@@ -8,7 +8,7 @@ return (
   <h2>{isHot ? "Hot Weather" : "Cool Weather"}</h2>
 )
 
-// 2) -------- Props (Data Flow) -------//
+// 2) ---------------- Props (Data Flow) -----------------//
 
 # Props = data passed to components
 
@@ -35,3 +35,42 @@ return (
     </div>
   )
 }
+
+
+// 3) --------------- Use State -------------- //
+State = Data the changes over time
+
+import { useState } from "react"
+
+const Counter = () => {
+  const [count, setCount] = useState(0)
+
+  return (
+    <>
+      <p>{count}</p>
+      <button onClick={() => setCount(count + 1)}>+</button>
+    </>
+  )
+}
+
+  
+// 4) --------------- Event handling-------------- //
+<button onClick={handleClick}>Click</button>
+
+  
+// 5) --------------- Conditional Handling -------------- //
+import { useState } from 'react'
+
+function App() {
+ const [loading, setLoading] = useState(true)
+
+  return (
+    <>
+  {loading && <p>I will only appear when Loading is True</p>}  // Logical Operator
+
+  {loading ? <p>Loading state is True</p> : <p>Loading state is false</p> }  // Ternary operator
+    </> 
+  )
+}
+
+
